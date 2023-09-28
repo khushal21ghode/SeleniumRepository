@@ -58,11 +58,12 @@ public class LoginPage {
 	 
 	 
 	//operational Method 
-	public void validLogin(String validUsername, String validPassword)
+	public void validLogin(String validUsername, String validPassword) throws InterruptedException
 	{
 		usnTB.sendKeys(validUsername);
 		passTB.sendKeys(validPassword);
 		loginButton.click();
+		Thread.sleep(2000);
 	}
 	
 	public void invalidLogin(String invalidUsername,String invalidPassword) throws InterruptedException

@@ -2,6 +2,7 @@ package genericPackage;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -10,13 +11,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Reporter;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import com.google.common.io.Files;
 
 public class BaseTest extends Flib implements IautoConstant{ 
    
-	static WebDriver driver;
+	protected static WebDriver driver;
+	
    @BeforeMethod
    public void setUp() throws IOException
    {
@@ -41,6 +44,10 @@ public class BaseTest extends Flib implements IautoConstant{
 	    	 Reporter.log("Enter a Correct Browser Value",true);
 	     }
 	     
+	     driver.manage().window().maximize();
+	     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+	     driver.get(url);
+	     
 	     
    }
    
@@ -62,7 +69,7 @@ public class BaseTest extends Flib implements IautoConstant{
  	         }
    }
    
-   
+   @AfterMethod
    public void tearDown()
    {
 	   driver.quit();

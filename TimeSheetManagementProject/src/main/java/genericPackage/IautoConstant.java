@@ -12,4 +12,7 @@ public interface IautoConstant {
 	String VALID_SHEETNAME="Validcreds";
 	
 	String INVALID_SHEETNAME="Invalidcreds";
+	
+	String CUST_PRO_SHEET_NAME ="CustomerProjectcreds";
+	
 }
