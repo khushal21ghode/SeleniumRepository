@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Suite">
+  <test thread-count="5"  parallel="tests" name="ChromeTest">
+	  
+	  <parameter name="Browser" value="Chrome"></parameter>
+	  <parameter name="Url" value="http://laptop-mcihk329/login.do"></parameter>
+	  <parameter name="username" value="admin"></parameter>
+	  <parameter name="password" value="manager"></parameter>
+	  
+	  
+    <classes>
+      <class name="testNGExcecution.SelectBrowser"/>
+    </classes>
+    
+  </test> <!-- Test -->
+  
+  <test thread-count="5"  parallel="tests" name="FirefoxTest">
+	  
+	  <parameter name="Browser" value="Firefox"></parameter>
+	  <parameter name="Url" value="http://laptop-mcihk329/login.do"></parameter>
+	  <parameter name="username" value="admin"></parameter>
+	  <parameter name="password" value="manager"></parameter>
+	  
+	  
+    <classes>
+      <class name="testNGExcecution.SelectBrowser"/>
+    </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
